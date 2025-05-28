@@ -1,11 +1,18 @@
 # Set working directory to your HCC work folder
-
 # Load necessary libraries
 library(dada2); packageVersion("dada2")
 library(phyloseq); packageVersion("phyloseq")
 library(decontam); packageVersion("decontam")
 library(genefilter); packageVersion("genefilter")
 library(Biostrings); packageVersion("Biostrings")
+library(DECIPHER)
+library(phangorn)
+library(pairwiseAdonis)
+library(vegan)
+library(microbiome)
+library(compositions)
+library(caret)
+
 
 # Input FASTQ files
 fastq_files <- "./"
@@ -182,6 +189,7 @@ ps_mock_final_ps <- subset_taxa(ps_mock_final_ps, Order != "Chloroplast" | is.na
 
 dna <- Biostrings::DNAStringSet(taxa_names(ps_mock_final_ps))
 names(dna) <- taxa_names(ps_mock_final_ps)
+
 ps_mock_final_ps <- merge_phyloseq(ps_mock_final_ps, dna)
 taxa_names(ps_mock_final_ps) <- paste0("ASV", seq(ntaxa(ps_mock_final_ps)))
 
@@ -191,13 +199,6 @@ taxa_names(ps_mock_filtered) <- paste0("ASV_", seq(ntaxa(ps_mock_filtered)))
 
 saveRDS(ps_mock_filtered, "~/Documents/Kobza/250/ps_mock_filtered_ASV_IDs.rds")
 
-ps_long_seqs <- readRDS("~/Documents/Kobza/250/ps_mock_filtered_ASV_seqs.rds")
-head(taxa_names(ps_long_seqs))
-View(tax_table(ps_long_seqs))
-
-ps_asv_ids <- readRDS("~/Documents/Kobza/250/ps_mock_filtered_ASV_IDs.rds")
-head(taxa_names(ps_asv_ids))
-View(tax_table(ps_asv_ids))
 
 #filtering out neg controls
 ps_mock_neg <- subset_samples(ps_mock_final_ps, TYPE != "NEG_CON" & Animal_ID != "PCR positive")
@@ -264,6 +265,20 @@ save(ps_mock_analyze, file = "~/Documents/Kobza/250/ps_mock_analyze.rds")
 load("~/Documents/Kobza/250/ps_mock_analyze.rds")
 sum(otu_table(ps_mock_analyze))
 
+# Convert to matrix and transpose if taxa are rows
+otu_mat <- as(otu_table(ps_mock_analyze), "matrix")
+if (taxa_are_rows(ps_mock_analyze)) {
+  otu_mat <- t(otu_mat)
+}
+
+sample_sums <- rowSums(otu_mat)
+
+# Now plot rarefaction curves
+rarecurve(otu_mat, step = 50, cex = 0.5)
+abline(v = min(sample_sums), col = "red", lty = 2)
+
+View((ps_mock_analyze@otu_table))
+
 #normalize data on a proportional basis for further analysis (minus alpha diversity)
 norm_mock <-  transform_sample_counts(ps_mock_analyze, function(x) x / sum(x) )
 save(norm_mock, file= "~/Documents/Kobza/250/norm_mock.rds")
@@ -290,88 +305,382 @@ plot_richness(ps_rarefy, x = "TRT", measures = c("Observed", "Shannon"), color =
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 
-plot_richness(ps_rarefy, x = "TRT", measures = c("Observed", "Shannon")) +
-  geom_boxplot(aes(group = TRT), alpha = 0.5, outlier.shape = NA) +
-  geom_jitter(width = 0.2)
-
 # Ordination (e.g., PCoA)
-ordu <- ordinate(norm_mock, method = "PCoA", distance = "bray")
-plot_ordination(norm_mock, ordu, color = "TRT")
+ordu <- ordinate(ps_mock_analyze, method = "PCoA", distance = "bray")
+plot_ordination(ps_mock_analyze, ordu, color = "TRT", shape = "Period")
+
+percent_var <- round(100 * ordu$values$Relative_eig[1:2], 1)  # PCoA Axis 1 and 2
+
+# Update plot with percentage labels
+p <- plot_ordination(ps_mock_analyze, ordu, color = "TRT", shape = "Period") +
+  geom_point(size = 3) +
+  ggtitle("PCoA of Rumen Microbial Communities") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.title = element_text(size = 10),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 8)
+  ) +
+  labs(
+    x = paste0("Axis 1 (", percent_var[1], "%)"),
+    y = paste0("Axis 2 (", percent_var[2], "%)"),
+    color = "Treatment",
+    shape = "Sampling Period"
+  )
+
+# Display the plot
+print(p)
+
+metadata_df <- as(sample_data(ps_mock_analyze), "data.frame")
+dist_mat_clean <- phyloseq::distance(ps_mock_analyze, method = "bray")
+permanova <- adonis2(dist_mat_clean ~ TRT + Period, data = metadata_df, by = "terms")
+print(permanova)
+
+View(norm_mock@sam_data)
 
 
-#PERMANOVA
 
-# Load necessary packages
-library(vegan)
-library(phyloseq)
-library(pairwiseAdonis)
-library(ggplot2)
 
-# Step 1: Extract and clean metadata
-meta <- as(sample_data(norm_mock), "data.frame")
 
-# Remove samples with NA in TRT (e.g., controls)
-meta_clean <- meta[!is.na(meta$TRT), ]
 
-# Ensure TRT and Period are factors
-meta_clean$TRT <- factor(meta_clean$TRT)
-meta_clean$Period <- factor(meta_clean$Period)
 
-# Step 2: Extract and match OTU table
-otu_matrix <- as(otu_table(norm_mock), "matrix")
-if (taxa_are_rows(norm_mock)) {
-  otu_matrix <- t(otu_matrix)
+
+################## Phlogenitic tree #######################
+
+dna_seqs <- refseq(ps_mock_analyze)
+alignment <- AlignSeqs(dna_seqs, anchor=NA)
+
+phang_align <- phyDat(as(alignment, "matrix"), type="DNA") # Convert alignment to phangorn format
+
+dm <- dist.ml(phang_align) # Distance matrix
+treeNJ <- NJ(dm) # Build initial NJ tree
+
+# Maximum likelihood optimization
+fit <- pml(treeNJ, data=phang_align)
+fitGTR <- update(fit, k=4, inv=0.2)
+fitGTR <- optim.pml(fitGTR, model="GTR", optInv=TRUE, optGamma=TRUE,
+                    rearrangement = "stochastic", control = pml.control(trace = 0))
+
+tree <- fitGTR$tree
+
+save(tree, file = "~/Documents/Kobza/250/tree.rds")
+
+ps_mock_analyze <- merge_phyloseq(ps_mock_analyze, tree)
+norm_tree_mock <- transform_sample_counts(ps_mock_analyze, function(x) x / sum(x))
+
+
+#################### Prepare and clean metadata #############################
+
+metadata <- as(sample_data(norm_tree_mock), "data.frame")
+metadata_clean <- metadata[complete.cases(metadata[, c("TRT", "Period")]), ]
+metadata_clean$TRT <- as.factor(metadata_clean$TRT)
+metadata_clean$Period <- as.factor(metadata_clean$Period)
+samples_to_keep <- rownames(metadata_clean)
+
+
+
+
+run_unifrac_analysis <- function(physeq_obj, method = "unifrac",
+                                 metadata_df, sample_ids,
+                                 title_label = "PCoA Plot",
+                                 save_path = NULL) {
+  # 1. Subset and calculate distance matrix
+  dist_mat <- phyloseq::distance(physeq_obj, method = method)
+  dist_mat_clean <- as.matrix(dist_mat)[sample_ids, sample_ids]
+  dist_mat_clean <- as.dist(dist_mat_clean)
+  
+  # 2. Run PCoA ordination
+  ord <- ordinate(physeq_obj, method = "PCoA", distance = method)
+  
+  # 3. Get % variance explained for axes
+  pvar <- round(100 * ord$values$Relative_eig[1:2], 1)
+  x_lab <- paste0("PCoA Axis 1 [", pvar[1], "%]")
+  y_lab <- paste0("PCoA Axis 2 [", pvar[2], "%]")
+  
+  # 4. Create plot
+  p <- plot_ordination(physeq_obj, ord, color = "TRT", shape = "Period") +
+    geom_point(size = 3, alpha = 0.9) +
+    ggtitle(title_label) +
+    labs(x = x_lab, y = y_lab, color = "Treatment", shape = "Sampling Period") +
+    theme_minimal(base_size = 14) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+      legend.position = "right",
+      legend.title = element_text(size = 10),
+      legend.text = element_text(size = 8),
+      axis.title = element_text(size = 10),
+      axis.text = element_text(size = 8)
+    )
+  
+  
+  print(p)
+
+  # 7. Run PERMANOVA
+  permanova <- adonis2(dist_mat_clean ~ TRT + Period, data = metadata_df, by = "terms")
+  print(permanova)
+  
+  # 8. Return results
+  return(list(plot = p, result = permanova))
 }
 
-# Match OTU table to cleaned metadata
-otu_clean <- otu_matrix[rownames(meta_clean), ]
 
-# Step 3: Compute Bray-Curtis distance
-bray_dist <- vegdist(otu_clean, method = "bray")
+# Run Unweighted UniFrac PCoA + PERMANOVA
+result_unifrac <- run_unifrac_analysis(
+  physeq_obj = norm_tree_mock,
+  method = "unifrac",
+  metadata_df = metadata_clean,
+  sample_ids = samples_to_keep,
+  title_label = "Unweighted UniFrac",
+  save_path = "unweighted_unifrac_pcoa.pdf"  # optional: save as PDF
+)
 
-# Step 4: Run PERMANOVA (Treatment effect)
-adonis_trt <- adonis2(bray_dist ~ TRT, data = meta_clean, permutations = 999)
-print(adonis_trt)
-
-# Step 5: PERMANOVA with interaction (Treatment * Period)
-adonis_interaction <- adonis2(bray_dist ~ TRT + Period + TRT:Period, data = meta_clean, permutations = 999)
-print(adonis_interaction)
-
-interaction <- adonis2(bray_dist ~ TRT * Period, data = meta_clean, permutations = 999, strata = meta_clean$Animal)
-print(interaction)
-
-# Step 6: Check homogeneity of dispersion (adonis assumption)
-dispersion_test <- betadisper(bray_dist, meta_clean$TRT)
-permutest_disp <- permutest(dispersion_test)
-print(permutest_disp)
-
-plot(dispersion_test)
-
-# Add boxplots to visualize group dispersions
-boxplot(dispersion_test)
-
-# Step 7: Pairwise PERMANOVA
-pairwise_result <- pairwise.adonis(otu_clean, factors = meta_clean$TRT, 
-                                   sim.method = "bray", p.adjust.m = "bonferroni")
-print(pairwise_result)
+# Run Weighted UniFrac PCoA + PERMANOVA
+result_wunifrac <- run_unifrac_analysis(
+  physeq_obj = norm_tree_mock,
+  method = "wunifrac",
+  metadata_df = metadata_clean,
+  sample_ids = samples_to_keep,
+  title_label = "Weighted UniFrac",
+  save_path = "weighted_unifrac_pcoa.pdf"  # optional
+)
 
 
 
-# Load necessary libraries
-library(phyloseq)
-library(igraph)
-library(ggplot2)
+run_pca_analysis <- function(physeq_obj, metadata_df, sample_ids,
+                             title_label = "PCA Ordination",
+                             save_path = NULL) {
+  # 1. Extract OTU/ASV matrix (samples as rows)
+  otu_mat <- as(otu_table(physeq_obj), "matrix")
+  if (taxa_are_rows(physeq_obj)) {
+    otu_mat <- t(otu_mat)
+  }
+  
+  # 2. Subset to cleaned samples
+  otu_mat <- otu_mat[sample_ids, ]
+  
+  # 3. Perform PCA on scaled data
+  pca_result <- prcomp(otu_mat, scale. = TRUE)
+  
+  # 4. Prepare PCA scores
+  pca_df <- as.data.frame(pca_result$x[, 1:2])
+  pca_df$SampleID <- rownames(pca_df)
+  
+  # 5. Merge with metadata
+  meta_df <- metadata_df
+  meta_df$SampleID <- rownames(meta_df)
+  merged_df <- merge(pca_df, meta_df, by = "SampleID")
+  
+  # 6. Calculate % variance explained
+  pvar <- round(100 * summary(pca_result)$importance[2, 1:2], 1)
+  x_lab <- paste0("PC1 (", pvar[1], "%)")
+  y_lab <- paste0("PC2 (", pvar[2], "%)")
+  
+  # 7. Create PCA plot
+  p <- ggplot(merged_df, aes(x = PC1, y = PC2, color = TRT, shape = Period)) +
+    geom_point(size = 3, alpha = 0.9) +
+    ggtitle(title_label) +
+    labs(x = x_lab, y = y_lab, color = "Treatment", shape = "Sampling Period") +
+    theme_minimal(base_size = 14) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+      legend.title = element_text(size = 10),
+      legend.text = element_text(size = 8),
+      axis.title = element_text(size = 10),
+      axis.text = element_text(size = 8)
+    )
+  
+  print(p)
+  
+  # 9. Run PERMANOVA on Euclidean distances
+  dist_mat <- dist(otu_mat)
+  permanova <- adonis2(dist_mat ~ TRT + Period, data = metadata_df, by = "terms")
+  print(permanova)
+  
+  # 10. Return plot and stats
+  return(list(plot = p, result = permanova))
+}
 
-# Create a sample-wise network using Jaccard distance
-net <- make_network(norm_mock, type = "samples", distance = "bray", max.dist = 0.6)
+result_pca <- run_pca_analysis(
+  physeq_obj = norm_tree_mock,
+  metadata_df = metadata_clean,
+  sample_ids = samples_to_keep,
+  title_label = "PCA of Rumen Microbial Communities"  # Optional
+)
 
-library(igraph)
-vcount(net)  # Number of vertices
-ecount(net)  # Number of edges
 
-sample_data(norm_mock)$Period <- as.factor(sample_data(norm_mock)$Period)
 
-plot_network(net, norm_mock, type = "samples", color = "TRT", shape = "Period")
+run_aitchison_pca_analysis <- function(physeq_obj,
+                                       metadata_df,
+                                       sample_ids,
+                                       title_label = "Aitchison PCA (CLR-transformed)",
+                                       plot_filename = NULL,
+                                       verbose = TRUE) {
+  # 1. CLR transform
+  ps_clr <- microbiome::transform(physeq_obj, "clr")
+  
+  # 2. Extract OTU/ASV matrix
+  otu_mat <- as(otu_table(ps_clr), "matrix")
+  if (taxa_are_rows(ps_clr)) {
+    otu_mat <- t(otu_mat)
+  }
+  
+  # 3. Subset to valid samples
+  otu_mat <- otu_mat[sample_ids, ]
+  
+  # 4. Run PCA on CLR-transformed data
+  pca_result <- prcomp(otu_mat, scale. = TRUE)
+  
+  # 5. Prepare metadata
+  meta_df <- metadata_df
+  meta_df$SampleID <- rownames(meta_df)
+  
+  # 6. Combine PCA scores + metadata
+  pca_df <- as.data.frame(pca_result$x[, 1:2])
+  pca_df$SampleID <- rownames(pca_df)
+  merged_df <- merge(pca_df, meta_df, by = "SampleID")
+  
+  # 7. Calculate % variance explained
+  pvar <- round(100 * summary(pca_result)$importance[2, 1:2], 1)
+  x_lab <- paste0("PC1 (", pvar[1], "%)")
+  y_lab <- paste0("PC2 (", pvar[2], "%)")
+  
+  # 8. Plot
+  p <- ggplot(merged_df, aes(x = PC1, y = PC2, color = TRT, shape = Period)) +
+    geom_point(size = 3, alpha = 0.9) +
+    ggtitle(title_label) +
+    labs(x = x_lab, y = y_lab, color = "Treatment", shape = "Sampling Period") +
+    theme_minimal(base_size = 13) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+      legend.title = element_text(size = 10),
+      legend.text = element_text(size = 8),
+      axis.title = element_text(size = 10),
+      axis.text = element_text(size = 8)
+    )
+  
+  # 9. Print or save plot
+  if (verbose) print(p)
+  if (!is.null(plot_filename)) {
+    ggsave(plot_filename, p, width = 8, height = 6, dpi = 300)
+  }
+  
+  # 10. Run PERMANOVA (Euclidean on CLR)
+  dist_mat <- dist(otu_mat)
+  permanova <- adonis2(dist_mat ~ TRT + Period, data = metadata_df, by = "terms")
+  if (verbose) print(permanova)
+  
+  # 11. Return
+  return(list(plot = p, result = permanova))
+}
+
+result_aitchison <- run_aitchison_pca_analysis(
+  physeq_obj = norm_tree_mock,
+  metadata_df = metadata_clean,
+  sample_ids = samples_to_keep,
+  title_label = "Aitchison PCA (CLR-transformed)",
+  plot_filename = "figures/aitchison_pca.pdf"  # Save as PDF
+)
+
+
+
+
+# Step 1: Extract OTU matrix
+otu_mat <- as(otu_table(norm_tree_mock), "matrix")
+if (taxa_are_rows(norm_tree_mock)) {
+  otu_mat <- t(otu_mat)
+}
+otu_mat <- otu_mat[samples_to_keep, ]
+
+# Step 2: Convert to compositional object
+otu_acomp <- acomp(otu_mat)
+
+# Step 3: ILR transformation
+otu_ilr <- ilr(otu_acomp)
+otu_ilr_matrix <- as.matrix(otu_ilr)
+
+# Step 4: PCA
+pca_result <- prcomp(otu_ilr_matrix, scale. = TRUE)
+
+# Step 4.5: PERMANOVA on ILR Euclidean distance
+metadata_df <- metadata_clean
+metadata_df$SampleID <- rownames(metadata_df)
+ilr_dist <- dist(otu_ilr_matrix)
+adonis_ilr <- adonis2(ilr_dist ~ TRT + Period, data = metadata_df, by = "terms")
+print(adonis_ilr)
+
+# Step 5: Prepare PCA plot data
+pca_df <- as.data.frame(pca_result$x[, 1:2])
+pca_df$SampleID <- rownames(pca_df)
+pca_df <- merge(pca_df, metadata_df, by = "SampleID")
+
+# Step 6: Variance explained
+pvar <- round(100 * summary(pca_result)$importance[2, 1:2], 1)
+
+# Step 7: Plot PCA
+ggplot(pca_df, aes(x = PC1, y = PC2, color = TRT, shape = Period)) +
+  geom_point(size = 3) +
+  theme_minimal() +
+  ggtitle("PCA using ILR Transformation") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  labs(
+    x = paste0("PC1 (", pvar[1], "%)"),
+    y = paste0("PC2 (", pvar[2], "%)")
+  )
+
+
+
+
+sample_ids <- rownames(metadata_clean)
+physeq_obj <- norm_tree_mock
+physeq_sub <- prune_samples(sample_ids, physeq_obj)
+
+# Root the tree (recommended)
+phy_tree(physeq_sub) <- ape::root(phy_tree(physeq_sub), outgroup = taxa_names(physeq_sub)[1], resolve.root = TRUE)
+
+# Compute distance and ordination
+dist_mat <- phyloseq::distance(physeq_sub, method = "unifrac")
+ord <- ordinate(physeq_sub, method = "PCoA", distance = "unifrac")
+
+group <- metadata_df$TRT[sample_ids]
+bd <- betadisper(dist_mat, group)
+anova(bd)  # If p < 0.05, dispersion differs across groups
+
+
+
+# Ensure consistent metadata and distance matrix
+dist_mat <- phyloseq::distance(physeq_sub, method = "unifrac")
+meta_sub <- metadata_df[rownames(as.matrix(dist_mat)), ]
+group <- meta_sub$TRT
+
+# Run betadisper properly
+bd <- betadisper(dist_mat, group)
+anova(bd)  # p < 0.05 means dispersion differs significantly across groups
+
+
+phyloseq::distance(physeq_sub, method = "wunifrac")
+
+# CLR transform
+otu_clr <- compositions::clr(t(otu_table(physeq_sub) + 1e-6))  # transpose BEFORE clr
+
+dist_clr <- dist(otu_clr)  # samples in rows
+meta_sub <- metadata_clean[rownames(otu_clr), ]  # subset metadata to same samples
+
+# Step 1: CLR on transposed OTU table
+otu_clr <- compositions::clr(t(otu_table(physeq_sub) + 1e-6))
+
+# Step 2: Create matching metadata
+meta_sub <- metadata_clean[rownames(otu_clr), ]
+
+# Step 3: Remove samples with missing TRT or Period
+meta_sub <- meta_sub[complete.cases(meta_sub[, c("TRT", "Period")]), ]
+
+# Step 4: Subset CLR matrix to only valid samples
+otu_clr <- otu_clr[rownames(meta_sub), ]
+
+# Step 5: Compute distance and run PERMANOVA
+dist_clr <- dist(otu_clr)
+adonis2(dist_clr ~ TRT + Period, data = meta_sub)
 
 
 
