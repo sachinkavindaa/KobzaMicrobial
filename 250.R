@@ -12,6 +12,12 @@ library(vegan)
 library(microbiome)
 library(compositions)
 library(caret)
+library(GUniFrac)
+library(phytools)
+library(ggplot2)
+library(ggtree)
+library(treeio)
+
 
 
 # Input FASTQ files
@@ -685,3 +691,159 @@ adonis2(dist_clr ~ TRT + Period, data = meta_sub)
 
 
 
+tree_rooted <- phytools::midpoint.root(phy_tree(norm_tree_mock))
+
+# Replace the tree in your phyloseq object
+phy_tree(norm_tree_mock) <- tree_rooted
+
+
+
+run_generalized_unifrac <- function(physeq_obj, metadata_df, sample_ids,
+                                    alpha_val = 0.5,
+                                    title_label = "Generalized UniFrac (d=0.5) PCoA") {
+  # Ensure phyloseq is loaded
+  if (!requireNamespace("phyloseq", quietly = TRUE)) stop("Load phyloseq package")
+  if (!requireNamespace("GUniFrac", quietly = TRUE)) stop("Load GUniFrac package")
+  if (!requireNamespace("ggplot2", quietly = TRUE)) stop("Load ggplot2 package")
+  if (!requireNamespace("vegan", quietly = TRUE)) stop("Load vegan package")
+  if (!requireNamespace("ape", quietly = TRUE)) stop("Load ape package")
+  
+  # 1. Extract OTU table
+  otu_mat <- as(otu_table(physeq_obj), "matrix")
+  if (taxa_are_rows(physeq_obj)) {
+    otu_mat <- t(otu_mat)
+  }
+  otu_mat <- otu_mat[sample_ids, ]
+  
+  # 2. Get tree
+  tree <- phy_tree(physeq_obj)
+  
+  # Compute Generalized UniFrac distances
+  unifracs <- GUniFrac(otu.tab = otu_mat, tree = tree, alpha = c(alpha_val))$unifracs
+  dist_mat <- unifracs[, , paste0("d_", alpha_val)]
+  dist_mat <- as.dist(dist_mat)
+  
+  
+  # 4. Run PCoA
+  pcoa <- ape::pcoa(dist_mat)
+  pvar <- round(pcoa$values$Relative_eig[1:2] * 100, 1)
+  x_lab <- paste0("PCoA Axis 1 (", pvar[1], "%)")
+  y_lab <- paste0("PCoA Axis 2 (", pvar[2], "%)")
+  
+  # 5. Prepare metadata + ordination data
+  metadata_df$SampleID <- rownames(metadata_df)
+  ord_df <- as.data.frame(pcoa$vectors[, 1:2])
+  ord_df$SampleID <- rownames(ord_df)
+  merged_df <- merge(ord_df, metadata_df, by = "SampleID")
+  
+  # 6. Plot
+  p <- ggplot(merged_df, aes(x = Axis.1, y = Axis.2, color = TRT, shape = Period)) +
+    geom_point(size = 3, alpha = 0.9) +
+    ggtitle(title_label) +
+    labs(x = x_lab, y = y_lab, color = "Treatment", shape = "Sampling Period") +
+    theme_minimal(base_size = 14) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold"),
+      legend.title = element_text(size = 10),
+      legend.text = element_text(size = 8),
+      axis.title = element_text(size = 10),
+      axis.text = element_text(size = 8)
+    )
+  print(p)
+  
+  # 7. Run PERMANOVA
+  permanova <- adonis2(dist_mat ~ TRT + Period, data = metadata_df, by = "terms")
+  print(permanova)
+  
+  # 8. Return
+  return(list(plot = p, result = permanova, distance = dist_mat))
+}
+
+
+
+
+
+# 1. Extract OTU table
+otu_mat <- as(otu_table(norm_tree_mock), "matrix")
+if (taxa_are_rows(norm_tree_mock)) {
+  otu_mat <- t(otu_mat)
+}
+otu_mat <- otu_mat[samples_to_keep, ]
+
+# 2. Get tree
+tree <- phy_tree(norm_tree_mock)
+
+# 3. Root the tree if not already
+if (!is.rooted(tree)) {
+  library(phytools)
+  tree <- midpoint.root(tree)
+  phy_tree(norm_tree_mock) <- tree
+}
+
+# 4. Calculate Generalized UniFrac distance (alpha = 0.5)
+unifracs <- GUniFrac(otu.tab = otu_mat, tree = tree, alpha = c(0.5))$unifracs
+dist_mat <- unifracs[, , "d_0.5"]
+dist_mat <- as.dist(dist_mat)
+
+# 5. Perform PCoA
+pcoa <- ape::pcoa(dist_mat)
+
+# 6. Prepare ordination + metadata dataframe
+metadata_df <- metadata_clean
+metadata_df$SampleID <- rownames(metadata_df)
+pcoa_df <- as.data.frame(pcoa$vectors[, 1:2])
+pcoa_df$SampleID <- rownames(pcoa_df)
+merged_df <- merge(pcoa_df, metadata_df, by = "SampleID")
+
+# 7. Plot with ellipses and centroids
+library(ggplot2)
+ggplot(merged_df, aes(x = Axis.1, y = Axis.2, color = TRT, shape = Period)) +
+  geom_point(size = 3, alpha = 0.9) +
+  stat_ellipse(aes(group = TRT), linetype = "dashed", level = 0.68, size = 0.8) +
+  stat_summary(fun = mean, geom = "point", size = 4, shape = 4, stroke = 2, aes(group = TRT)) +
+  labs(
+    title = "Generalized UniFrac d(0.5): Rumen Microbiome",
+    x = paste0("PCoA Axis 1 (", round(pcoa$values$Relative_eig[1] * 100, 1), "%)"),
+    y = paste0("PCoA Axis 2 (", round(pcoa$values$Relative_eig[2] * 100, 1), "%)")
+  ) +
+  theme_minimal(base_size = 14)
+
+
+############### Visualise tree ############################
+tree <- phy_tree(ps_mock_analyze)
+
+# Get taxonomy table
+tax_tab <- as.data.frame(tax_table(ps_mock_analyze))
+
+# Extract ASV tips in the same order as the tree
+asv_names <- tree$tip.label
+
+# Choose a taxonomic rank to color (e.g., Phylum)
+tax_coloring_rank <- "Phylum"
+tax_groups <- tax_tab[asv_names, tax_coloring_rank]
+
+# Replace NAs or empty strings with "Unclassified"
+tax_groups[is.na(tax_groups) | tax_groups == ""] <- "Unclassified"
+
+# Assign colors to each group
+tax_levels <- unique(tax_groups)
+colors <- setNames(brewer.pal(min(length(tax_levels), 8), "Set1"), tax_levels)
+
+# Handle more than 8 groups
+if (length(tax_levels) > 8) {
+  library(randomcoloR)
+  colors <- setNames(distinctColorPalette(length(tax_levels)), tax_levels)
+}
+
+tip_colors <- colors[tax_groups]
+
+plot(tree,
+     tip.color = tip_colors,
+     cex = 0.4,
+     label.offset = 0.01,
+     main = "Phylogenetic Tree of ASVs by Phylum")
+
+add.scale.bar(length = 0.1, lwd = 1)
+
+# Optional legend
+legend("topright", legend = names(colors), col = colors, pch = 19, cex = 0.5, box.lty = 0)
