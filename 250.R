@@ -847,3 +847,5 @@ add.scale.bar(length = 0.1, lwd = 1)
 
 # Optional legend
 legend("topright", legend = names(colors), col = colors, pch = 19, cex = 0.5, box.lty = 0)
+
+#tets
