@@ -19,7 +19,6 @@ library(ggtree)
 library(treeio)
 
 
-
 # Input FASTQ files
 fastq_files <- "./"
 fnFs <- sort(list.files(fastq_files, pattern = "_R1_001.fastq.gz", full.names = TRUE))
@@ -108,6 +107,7 @@ track_seq <- cbind(
   sapply(dadaFs, getN),
   rowSums(seqtab.nochim)
 )
+
 colnames(track_seq) <- c("input", "filtered", "denoisedF", "nonchim")
 rownames(track_seq) <- sample.names
 
@@ -314,6 +314,7 @@ plot_richness(ps_rarefy, x = "TRT", measures = c("Observed", "Shannon"), color =
 # Ordination (e.g., PCoA)
 ordu <- ordinate(ps_mock_analyze, method = "PCoA", distance = "bray")
 plot_ordination(ps_mock_analyze, ordu, color = "TRT", shape = "Period")
+
 
 percent_var <- round(100 * ordu$values$Relative_eig[1:2], 1)  # PCoA Axis 1 and 2
 
@@ -849,3 +850,8 @@ add.scale.bar(length = 0.1, lwd = 1)
 legend("topright", legend = names(colors), col = colors, pch = 19, cex = 0.5, box.lty = 0)
 
 #tets
+
+
+
+
+
