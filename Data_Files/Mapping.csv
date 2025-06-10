@@ -1,0 +1,29 @@
+﻿#SampleID,Animal_ID,AnimalID,Animal,Date,Period,TRT,TYPE
+57,extraction negative,,,,,,NEG_CON
+58,PCR negative,,,,,,NEG_CON
+59,PCR positive,,,,,,Sample
+60,Kobza 7075 P4 Day 21,7075,A_7075,3/31/23,Period_4,TL,Sample
+61,Kobza 7063 P4 Day 21,7063,A_7063,3/31/23,Period_4,COL,Sample
+62,Kobza 7076 P4 Day 21,7076,A_7076,3/31/23,Period_4,Corn Oil,Sample
+63,Kobza 7101 P4 Day 21,7101,A_7101,3/31/23,Period_4,Tallow,Sample
+64,Kobza 7084 P4 Day 21,7084,A_7084,3/31/23,Period_4,Control,Sample
+65,Kobza 7075 P5 Day 21,7075,A_7075,4/21/23,Period_5,Control,Sample
+66,Kobza 7063 P5 Day 21,7063,A_7063,4/21/23,Period_5,TL,Sample
+67,Kobza 7076 P5 Day 21,7076,A_7076,4/21/23,Period_5,Tallow,Sample
+68,Kobza 7101 P5 Day 21,7101,A_7101,4/21/23,Period_5,COL,Sample
+69,Kobza 7084 P5 Day 21,7084,A_7084,4/21/23,Period_5,Corn Oil,Sample
+70,Kobza 7075 P3 Day 21,7075,A_7075,3/10/23,Period_3,COL,Sample
+71,Kobza 7063 P3 Day 21,7063,A_7063,3/10/23,Period_3,Tallow,Sample
+72,Kobza 7076 P3 Day 21,7076,A_7076,3/10/23,Period_3,Control,Sample
+73,Kobza 7101 P3 Day 21,7101,A_7101,3/10/23,Period_3,Corn Oil,Sample
+74,Kobza 7084 P3 Day 21,7084,A_7084,3/10/23,Period_3,TL,Sample
+75,Kobza 7075 P2 Day 21,7075,A_7075,2/17/23,Period_2,Corn Oil,Sample
+76,Kobza 7063 P2 Day 21,7063,A_7063,2/17/23,Period_2,Control,Sample
+77,Kobza 7076 P2 Day 21,7076,A_7076,2/17/23,Period_2,COL,Sample
+78,Kobza 7101 P2 Day 21,7101,A_7101,2/17/23,Period_2,TL,Sample
+79,Kobza 7084 P2 Day 21,7084,A_7084,2/17/23,Period_2,Tallow,Sample
+80,Kobza 7075 P1 Day 21,7075,A_7075,1/27/23,Period_1,Tallow,Sample
+81,Kobza 7063 P1 Day 21,7063,A_7063,1/27/23,Period_1,Corn Oil,Sample
+82,Kobza 7076 P1 Day 21,7076,A_7076,1/27/23,Period_1,TL,Sample
+83,Kobza 7101 P1 Day 21,7101,A_7101,1/27/23,Period_1,Control,Sample
+84,Kobza 7084 P1 Day 21,7084,A_7084,1/27/23,Period_1,COL,Sample
