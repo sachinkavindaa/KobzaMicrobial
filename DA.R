@@ -29,9 +29,7 @@ ps_mock_analyze <- readRDS("~/Documents/Kobza/250/ps_mock_analyze_fixed.rds")
 
 
 sample_data(ps_mock_analyze)$TRT <- factor(sample_data(ps_mock_analyze)$TRT, 
-                                           levels = c("Control", "Corn Oil"))
-View(ps_mock_analyze@sam_data)
-
+                                           levels = c("Tallow", "TL"))
 
 #ps_mock_analyze_con_col <- subset_samples(ps_mock_analyze, TRT == "Control" | TRT == "COL")
 #ps_mock_analyze_con_col
@@ -78,7 +76,7 @@ top_sig$Taxon <- paste0(top_sig$Genus, " ", top_sig$Species, " [", top_sig$ASV_I
 top_sig$Taxon <- factor(top_sig$Taxon, levels = top_sig$Taxon[order(top_sig$log2FoldChange)])
 
 # Add direction for coloring (up/down in COL)
-top_sig$Regulation <- ifelse(top_sig$log2FoldChange > 0, "Up in COL", "Down in COL")
+top_sig$Regulation <- ifelse(top_sig$log2FoldChange > 0, "Up in TL", "Down in TL")
 
 # Plot
 ggplot(top_sig, aes(x = Taxon, y = log2FoldChange, fill = Regulation)) +
@@ -87,10 +85,10 @@ ggplot(top_sig, aes(x = Taxon, y = log2FoldChange, fill = Regulation)) +
             hjust = ifelse(top_sig$log2FoldChange > 0, -0.1, 1.1), 
             size = 3) +
   coord_flip() +
-  scale_fill_manual(values = c("Up in COL" = "#00BFC4", "Down in COL" = "#F8766D")) +
+  scale_fill_manual(values = c("Up in TL" = "#00BFC4", "Down in TL" = "#F8766D")) +
   labs(
-    title = "Top 20 Differentially Abundant ASVs (Corn Oil vs Control)",
-    y = "Log2 Fold Change (Corn Oil vs Control)",
+    title = "Top 20 Differentially Abundant ASVs (Tallow vs TL)",
+    y = "Log2 Fold Change (Tallow vs TL)",
     x = "Taxa (Genus Species [ASV ID])",
     fill = "Direction"
   ) +
