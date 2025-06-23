@@ -1,124 +1,124 @@
-"Pattern","ASV","Count","Kingdom","Phylum","Class","Order","Family","Genus","Species"
-"COL_vs_Control","ASV124",3,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","F082",NA,NA
-"COL_vs_Control","ASV170",3,"Bacteria","Cyanobacteriota","Vampirivibrionia","Gastranaerophilales","Gastranaerophilaceae","Zag_111",NA
-"COL_vs_Control","ASV6",3,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Xylanibacter",NA
-"COL_vs_Control & Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_Control","ASV136",2,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","F082",NA,NA
-"COL_vs_Control & Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_Control","ASV151",2,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae","[Bacteroides] pectinophilus group",NA
-"COL_vs_Control & Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_Control & Tallow_vs_TL","ASV92",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Prevotella",NA
-"COL_vs_Control & Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_TL & TL_vs_COL","ASV17",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Muribaculaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV101",11,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV128",11,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Muribaculaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV201",11,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae","Oribacterium",NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV205",11,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae","Ruminococcus",NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV214",11,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae","Ruminococcus",NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV241",11,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Muribaculaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV258",11,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Muribaculaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV263",11,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Prevotellaceae UCG-001",NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV266",11,"Bacteria","Bacillota","Negativicutes","Veillonellales-Selenomonadales","Selenomonadaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV28",11,"Bacteria","Spirochaetota","Spirochaetia","Spirochaetales","Spirochaetaceae","Treponema","porcinum"
-"COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV39",11,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Muribaculaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_Control","ASV130",1,"Bacteria","Bacillota","Clostridia","Oscillospirales","Oscillospiraceae","NK4A214 group",NA
-"COL_vs_Control & Corn Oil_vs_Control & Corn Oil_vs_TL & Tallow_vs_Control & Tallow_vs_TL & TL_vs_COL","ASV94",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Rikenellaceae","U29-B03",NA
-"COL_vs_Control & Corn Oil_vs_Control & Corn Oil_vs_Tallow","ASV200",1,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae","Marvinbryantia",NA
-"COL_vs_Control & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL & Tallow_vs_COL & TL_vs_COL","ASV84",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Prevotella",NA
-"COL_vs_Control & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_TL & TL_vs_Control","ASV113",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Xylanibacter",NA
-"COL_vs_Control & Corn Oil_vs_Control & TL_vs_Control","ASV49",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Prevotellaceae UCG-001",NA
-"COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control","ASV224",1,"Bacteria","Bacillota","Clostridia","Christensenellales","Christensenellaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV107",7,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae","UCG-001",NA
-"COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV176",7,"Bacteria","Bacillota","Negativicutes","Veillonellales-Selenomonadales","Selenomonadaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV227",7,"Bacteria","Bacillota","Negativicutes","Veillonellales-Selenomonadales","Selenomonadaceae",NA,NA
-"COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV256",7,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Tractidigestivibacter",NA
-"COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV257",7,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Tractidigestivibacter",NA
-"COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV48",7,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Tractidigestivibacter",NA
-"COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV74",7,"Bacteria","Bacillota","Clostridia","Oscillospirales","Oscillospiraceae","Colidextribacter",NA
-"COL_vs_Control & TL_vs_COL","ASV90",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Rikenellaceae","U29-B03",NA
-"COL_vs_Control & Tallow_vs_COL & TL_vs_COL","ASV219",1,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Atopobium",NA
-"COL_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV86",1,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Olsenella",NA
-"COL_vs_Control & Tallow_vs_Control & Tallow_vs_TL & TL_vs_COL","ASV152",1,"Bacteria","Pseudomonadota","Gammaproteobacteria","Enterobacterales","Succinivibrionaceae",NA,NA
-"Corn Oil_vs_COL","ASV147",4,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Prevotellaceae YAB2003 group",NA
-"Corn Oil_vs_COL","ASV231",4,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Xylanibacter",NA
-"Corn Oil_vs_COL","ASV299",4,"Bacteria","Bacillota","Bacilli","RF39",NA,NA,NA
-"Corn Oil_vs_COL","ASV98",4,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Rikenellaceae","Rikenellaceae RC9 gut group",NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control","ASV284",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Xylanibacter",NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_TL","ASV106",3,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Tractidigestivibacter",NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_TL","ASV192",3,"Bacteria","Pseudomonadota","Gammaproteobacteria","Enterobacterales","Succinivibrionaceae","Ruminobacter","amylophilus"
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_TL","ASV277",3,"Bacteria","Pseudomonadota","Gammaproteobacteria","Enterobacterales","Succinivibrionaceae",NA,NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow","ASV89",2,"Bacteria","Bacillota","Clostridia","Christensenellales","Christensenellaceae","Christensenellaceae R-7 group",NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow","ASV97",2,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae","Lachnospiraceae NK3A20 group",NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL","ASV158",6,"Bacteria","Bacillota","Clostridia","Clostridia UCG-014",NA,NA,NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL","ASV183",6,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Rikenellaceae","Rikenellaceae RC9 gut group",NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL","ASV253",6,"Bacteria","Bacillota","Clostridia","Clostridia UCG-014",NA,NA,NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL","ASV279",6,"Bacteria","Bacillota","Clostridia","Oscillospirales","Oscillospiraceae","NK4A214 group",NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL","ASV287",6,"Bacteria","Bacillota","Clostridia","Clostridia UCG-014",NA,NA,NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL","ASV295",6,"Bacteria","Bacillota","Clostridia","Christensenellales","Christensenellaceae","Christensenellaceae R-7 group",NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV108",1,"Bacteria","Bacillota","Negativicutes","Veillonellales-Selenomonadales","Selenomonadaceae",NA,NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & TL_vs_COL & TL_vs_Control","ASV93",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Muribaculaceae",NA,NA
-"Corn Oil_vs_COL & Corn Oil_vs_Control & Tallow_vs_COL & Tallow_vs_Control & TL_vs_COL & TL_vs_Control","ASV51",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Muribaculaceae",NA,NA
-"Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_TL & TL_vs_COL","ASV77",1,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae","Lachnospiraceae XPB1014 group",NA
-"Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL","ASV217",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Prevotellaceae NK3B31 group",NA
-"Corn Oil_vs_Control","ASV186",2,"Bacteria","Cyanobacteriota","Vampirivibrionia","Gastranaerophilales","Gastranaerophilaceae","Zag_111",NA
-"Corn Oil_vs_Control","ASV261",2,"Bacteria","Pseudomonadota","Gammaproteobacteria","Enterobacterales","Succinivibrionaceae","Succinivibrio","dextrinosolvens"
-"Corn Oil_vs_Control & Corn Oil_vs_Tallow","ASV42",2,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Tractidigestivibacter",NA
-"Corn Oil_vs_Control & Corn Oil_vs_Tallow","ASV54",2,"Bacteria","Bacillota","Bacilli","RF39",NA,NA,NA
-"Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL","ASV154",1,"Bacteria","Pseudomonadota","Gammaproteobacteria","Enterobacterales","Succinivibrionaceae","Succinivibrio","dextrinosolvens"
-"Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL & Tallow_vs_COL & TL_vs_COL","ASV46",1,"Bacteria","Spirochaetota","Spirochaetia","Spirochaetales","Spirochaetaceae","Treponema","porcinum"
-"Corn Oil_vs_Control & Corn Oil_vs_Tallow & Tallow_vs_TL & TL_vs_Control","ASV69",1,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae","Ruminococcus",NA
-"Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV213",2,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Xylanibacter",NA
-"Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control","ASV286",2,"Bacteria","Cyanobacteriota","Vampirivibrionia","Gastranaerophilales","Gastranaerophilaceae","Zag_111",NA
-"Corn Oil_vs_TL & TL_vs_COL & TL_vs_Control","ASV210",2,"Bacteria","Bacillota","Clostridia","Oscillospirales","Oscillospiraceae","UCG-005",NA
-"Corn Oil_vs_TL & TL_vs_COL & TL_vs_Control","ASV260",2,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae","Ruminococcus","bromii"
-"Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL","ASV34",1,"Bacteria","Spirochaetota","Spirochaetia","Spirochaetales","Spirochaetaceae","Treponema",NA
-"Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV139",7,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Tractidigestivibacter",NA
-"Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV142",7,"Bacteria","Patescibacteria","Saccharimonadia","Saccharimonadales","Saccharimonadaceae","Candidatus Saccharimonas",NA
-"Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV182",7,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Xylanibacter",NA
-"Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV222",7,"Bacteria","Spirochaetota","Spirochaetia","Spirochaetales","Spirochaetaceae","Treponema",NA
-"Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV268",7,"Bacteria","Spirochaetota","Spirochaetia","Spirochaetales","Spirochaetaceae","Treponema",NA
-"Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV281",7,"Bacteria","Spirochaetota","Spirochaetia","Spirochaetales","Spirochaetaceae","Treponema",NA
-"Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV55",7,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Segatella",NA
-"Corn Oil_vs_Tallow","ASV127",4,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae","Lachnospiraceae NK3A20 group",NA
-"Corn Oil_vs_Tallow","ASV169",4,"Bacteria","Bacillota","Bacilli","Erysipelotrichales","Erysipelotrichaceae",NA,NA
-"Corn Oil_vs_Tallow","ASV235",4,"Bacteria","Bacillota","Negativicutes","Veillonellales-Selenomonadales","Veillonellaceae",NA,NA
-"Corn Oil_vs_Tallow","ASV236",4,"Bacteria","Bacillota","Clostridia","Clostridia UCG-014",NA,NA,NA
-"Corn Oil_vs_Tallow & Corn Oil_vs_TL & Tallow_vs_COL & TL_vs_COL","ASV99",1,"Bacteria","Bacillota","Clostridia",NA,NA,NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL","ASV194",2,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Segatella",NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL","ASV216",2,"Bacteria","Bacillota","Bacilli","RF39",NA,NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control","ASV167",2,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae",NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control","ASV66",2,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Prevotellaceae NK3B31 group",NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL","ASV10",5,"Bacteria","Patescibacteria","Saccharimonadia","Saccharimonadales",NA,NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL","ASV190",5,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae",NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL","ASV220",5,"Bacteria","Bacillota","Bacilli","RF39",NA,NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL","ASV290",5,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae","[Bacteroides] pectinophilus group",NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL","ASV296",5,"Bacteria","Bacillota","Clostridia","Clostridia UCG-014",NA,NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_TL","ASV153",2,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","F082",NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_TL","ASV292",2,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Prevotellaceae UCG-001",NA
-"Corn Oil_vs_Tallow & Tallow_vs_Control","ASV105",1,"Bacteria","Cyanobacteriota","Vampirivibrionia","Gastranaerophilales","Gastranaerophilaceae","CAG-196",NA
-"Corn Oil_vs_Tallow & Tallow_vs_Control & TL_vs_Control","ASV138",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Muribaculaceae",NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_Control & Tallow_vs_TL","ASV184",1,"Bacteria","Bacillota","Clostridia","Clostridia UCG-014",NA,NA,NA
-"Corn Oil_vs_Tallow & Tallow_vs_TL","ASV125",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","F082",NA,NA
-"TL_vs_COL","ASV215",5,"Bacteria","Spirochaetota","Spirochaetia","Spirochaetales","Spirochaetaceae","Treponema",NA
-"TL_vs_COL","ASV234",5,"Bacteria","Bacillota","Clostridia","Oscillospirales","Oscillospiraceae","NK4A214 group",NA
-"TL_vs_COL","ASV267",5,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae","CAG-352",NA
-"TL_vs_COL","ASV57",5,"Bacteria","Spirochaetota","Spirochaetia","Spirochaetales","Spirochaetaceae","Treponema",NA
-"TL_vs_COL","ASV62",5,"Bacteria","Bacillota","Clostridia","Lachnospirales","Lachnospiraceae","Oribacterium",NA
-"TL_vs_COL & TL_vs_Control","ASV193",1,"Bacteria","Bacillota","Clostridia","Oscillospirales","Oscillospiraceae","NK4A214 group",NA
-"TL_vs_Control","ASV52",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales",NA,NA,NA
-"Tallow_vs_COL","ASV174",3,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae",NA,NA
-"Tallow_vs_COL","ASV209",3,"Bacteria","Bacillota","Clostridia","Christensenellales","Christensenellaceae","Christensenellaceae R-7 group",NA
-"Tallow_vs_COL","ASV79",3,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Rikenellaceae","Rikenellaceae RC9 gut group",NA
-"Tallow_vs_COL & TL_vs_COL","ASV76",1,"Bacteria","Actinomycetota","Coriobacteriia","Coriobacteriales","Atopobiaceae","Tractidigestivibacter",NA
-"Tallow_vs_COL & Tallow_vs_Control","ASV115",2,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae","Ruminococcus",NA
-"Tallow_vs_COL & Tallow_vs_Control","ASV179",2,"Bacteria","Bacillota","Negativicutes","Acidaminococcales","Acidaminococcaceae","Acidaminococcus",NA
-"Tallow_vs_COL & Tallow_vs_TL","ASV117",1,"Bacteria","Bacillota","Clostridia","Christensenellales","Christensenellaceae","Christensenellaceae R-7 group",NA
-"Tallow_vs_Control","ASV132",4,"Bacteria","Bacillota","Clostridia","Clostridia UCG-014",NA,NA,NA
-"Tallow_vs_Control","ASV172",4,"Bacteria","Bacillota","Clostridia","Clostridia UCG-014",NA,NA,NA
-"Tallow_vs_Control","ASV206",4,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae",NA,NA
-"Tallow_vs_Control","ASV45",4,"Bacteria","Bacillota","Clostridia","Oscillospirales","Ruminococcaceae",NA,NA
-"Tallow_vs_Control & TL_vs_Control","ASV177",1,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","F082",NA,NA
-"Tallow_vs_Control & Tallow_vs_TL","ASV144",2,"Bacteria","Actinomycetota","Actinobacteria","Bifidobacteriales","Bifidobacteriaceae","Bifidobacterium","adolescentis"
-"Tallow_vs_Control & Tallow_vs_TL","ASV225",2,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae",NA,NA
-"Tallow_vs_TL","ASV126",2,"Bacteria","Bacillota","Negativicutes","Acidaminococcales","Acidaminococcaceae","Succiniclasticum",NA
-"Tallow_vs_TL","ASV143",2,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Rikenellaceae","Rikenellaceae RC9 gut group",NA
-"Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV13",4,"Bacteria","Bacteroidota","Bacteroidia","Bacteroidales","Prevotellaceae","Xylanibacter",NA
-"Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV133",4,"Bacteria","Bacillota","Negativicutes","Veillonellales-Selenomonadales","Selenomonadaceae",NA,NA
-"Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV230",4,"Bacteria","Bacillota","Negativicutes","Veillonellales-Selenomonadales","Selenomonadaceae",NA,NA
-"Tallow_vs_TL & TL_vs_COL & TL_vs_Control","ASV285",4,"Bacteria","Actinomycetota","Actinobacteria","Bifidobacteriales","Bifidobacteriaceae","Bifidobacterium","pseudolongum"
+Pattern,ASV,Count,Kingdom,Phylum,Class,Order,Family,Genus,Species
+COL_vs_Control,ASV124,3,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,F082,NA,NA
+COL_vs_Control,ASV170,3,Bacteria,Cyanobacteriota,Vampirivibrionia,Gastranaerophilales,Gastranaerophilaceae,Zag_111,NA
+COL_vs_Control,ASV6,3,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Xylanibacter,NA
+COL_vs_Control & Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_Control,ASV136,2,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,F082,NA,NA
+COL_vs_Control & Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_Control,ASV151,2,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,[Bacteroides] pectinophilus group,NA
+COL_vs_Control & Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_Control & Tallow_vs_TL,ASV92,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,NA
+COL_vs_Control & Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_TL & TL_vs_COL,ASV17,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV101,11,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,NA,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV128,11,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV201,11,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Oribacterium,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV205,11,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,Ruminococcus,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV214,11,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,Ruminococcus,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV241,11,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV258,11,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV263,11,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotellaceae UCG-001,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV266,11,Bacteria,Bacillota,Negativicutes,Veillonellales-Selenomonadales,Selenomonadaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV28,11,Bacteria,Spirochaetota,Spirochaetia,Spirochaetales,Spirochaetaceae,Treponema,porcinum
+COL_vs_Control & Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV39,11,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_Control,ASV130,1,Bacteria,Bacillota,Clostridia,Oscillospirales,Oscillospiraceae,NK4A214 group,NA
+COL_vs_Control & Corn Oil_vs_Control & Corn Oil_vs_TL & Tallow_vs_Control & Tallow_vs_TL & TL_vs_COL,ASV94,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Rikenellaceae,U29-B03,NA
+COL_vs_Control & Corn Oil_vs_Control & Corn Oil_vs_Tallow,ASV200,1,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Marvinbryantia,NA
+COL_vs_Control & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL & Tallow_vs_COL & TL_vs_COL,ASV84,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotella,NA
+COL_vs_Control & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_TL & TL_vs_Control,ASV113,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Xylanibacter,NA
+COL_vs_Control & Corn Oil_vs_Control & TL_vs_Control,ASV49,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotellaceae UCG-001,NA
+COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control,ASV224,1,Bacteria,Bacillota,Clostridia,Christensenellales,Christensenellaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV107,7,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,UCG-001,NA
+COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV176,7,Bacteria,Bacillota,Negativicutes,Veillonellales-Selenomonadales,Selenomonadaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV227,7,Bacteria,Bacillota,Negativicutes,Veillonellales-Selenomonadales,Selenomonadaceae,NA,NA
+COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV256,7,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Tractidigestivibacter,NA
+COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV257,7,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Tractidigestivibacter,NA
+COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV48,7,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Tractidigestivibacter,NA
+COL_vs_Control & Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV74,7,Bacteria,Bacillota,Clostridia,Oscillospirales,Oscillospiraceae,Colidextribacter,NA
+COL_vs_Control & TL_vs_COL,ASV90,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Rikenellaceae,U29-B03,NA
+COL_vs_Control & Tallow_vs_COL & TL_vs_COL,ASV219,1,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Atopobium,NA
+COL_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV86,1,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Olsenella,NA
+COL_vs_Control & Tallow_vs_Control & Tallow_vs_TL & TL_vs_COL,ASV152,1,Bacteria,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Succinivibrionaceae,NA,NA
+Corn Oil_vs_COL,ASV147,4,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotellaceae YAB2003 group,NA
+Corn Oil_vs_COL,ASV231,4,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Xylanibacter,NA
+Corn Oil_vs_COL,ASV299,4,Bacteria,Bacillota,Bacilli,RF39,NA,NA,NA
+Corn Oil_vs_COL,ASV98,4,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Rikenellaceae,Rikenellaceae RC9 gut group,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control,ASV284,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Xylanibacter,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_TL,ASV106,3,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Tractidigestivibacter,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_TL,ASV192,3,Bacteria,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Succinivibrionaceae,Ruminobacter,amylophilus
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_TL,ASV277,3,Bacteria,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Succinivibrionaceae,NA,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow,ASV89,2,Bacteria,Bacillota,Clostridia,Christensenellales,Christensenellaceae,Christensenellaceae R-7 group,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow,ASV97,2,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Lachnospiraceae NK3A20 group,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL,ASV158,6,Bacteria,Bacillota,Clostridia,Clostridia UCG-014,NA,NA,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL,ASV183,6,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Rikenellaceae,Rikenellaceae RC9 gut group,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL,ASV253,6,Bacteria,Bacillota,Clostridia,Clostridia UCG-014,NA,NA,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL,ASV279,6,Bacteria,Bacillota,Clostridia,Oscillospirales,Oscillospiraceae,NK4A214 group,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL,ASV287,6,Bacteria,Bacillota,Clostridia,Clostridia UCG-014,NA,NA,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL,ASV295,6,Bacteria,Bacillota,Clostridia,Christensenellales,Christensenellaceae,Christensenellaceae R-7 group,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Corn Oil_vs_Tallow & Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV108,1,Bacteria,Bacillota,Negativicutes,Veillonellales-Selenomonadales,Selenomonadaceae,NA,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & TL_vs_COL & TL_vs_Control,ASV93,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,NA,NA
+Corn Oil_vs_COL & Corn Oil_vs_Control & Tallow_vs_COL & Tallow_vs_Control & TL_vs_COL & TL_vs_Control,ASV51,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,NA,NA
+Corn Oil_vs_COL & Corn Oil_vs_Tallow & Tallow_vs_TL & TL_vs_COL,ASV77,1,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Lachnospiraceae XPB1014 group,NA
+Corn Oil_vs_COL & Tallow_vs_COL & TL_vs_COL,ASV217,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotellaceae NK3B31 group,NA
+Corn Oil_vs_Control,ASV186,2,Bacteria,Cyanobacteriota,Vampirivibrionia,Gastranaerophilales,Gastranaerophilaceae,Zag_111,NA
+Corn Oil_vs_Control,ASV261,2,Bacteria,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Succinivibrionaceae,Succinivibrio,dextrinosolvens
+Corn Oil_vs_Control & Corn Oil_vs_Tallow,ASV42,2,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Tractidigestivibacter,NA
+Corn Oil_vs_Control & Corn Oil_vs_Tallow,ASV54,2,Bacteria,Bacillota,Bacilli,RF39,NA,NA,NA
+Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL,ASV154,1,Bacteria,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Succinivibrionaceae,Succinivibrio,dextrinosolvens
+Corn Oil_vs_Control & Corn Oil_vs_Tallow & Corn Oil_vs_TL & Tallow_vs_COL & TL_vs_COL,ASV46,1,Bacteria,Spirochaetota,Spirochaetia,Spirochaetales,Spirochaetaceae,Treponema,porcinum
+Corn Oil_vs_Control & Corn Oil_vs_Tallow & Tallow_vs_TL & TL_vs_Control,ASV69,1,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,Ruminococcus,NA
+Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV213,2,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Xylanibacter,NA
+Corn Oil_vs_Control & Tallow_vs_Control & TL_vs_Control,ASV286,2,Bacteria,Cyanobacteriota,Vampirivibrionia,Gastranaerophilales,Gastranaerophilaceae,Zag_111,NA
+Corn Oil_vs_TL & TL_vs_COL & TL_vs_Control,ASV210,2,Bacteria,Bacillota,Clostridia,Oscillospirales,Oscillospiraceae,UCG-005,NA
+Corn Oil_vs_TL & TL_vs_COL & TL_vs_Control,ASV260,2,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,Ruminococcus,bromii
+Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL,ASV34,1,Bacteria,Spirochaetota,Spirochaetia,Spirochaetales,Spirochaetaceae,Treponema,NA
+Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV139,7,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Tractidigestivibacter,NA
+Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV142,7,Bacteria,Patescibacteria,Saccharimonadia,Saccharimonadales,Saccharimonadaceae,Candidatus Saccharimonas,NA
+Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV182,7,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Xylanibacter,NA
+Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV222,7,Bacteria,Spirochaetota,Spirochaetia,Spirochaetales,Spirochaetaceae,Treponema,NA
+Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV268,7,Bacteria,Spirochaetota,Spirochaetia,Spirochaetales,Spirochaetaceae,Treponema,NA
+Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV281,7,Bacteria,Spirochaetota,Spirochaetia,Spirochaetales,Spirochaetaceae,Treponema,NA
+Corn Oil_vs_TL & Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV55,7,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Segatella,NA
+Corn Oil_vs_Tallow,ASV127,4,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Lachnospiraceae NK3A20 group,NA
+Corn Oil_vs_Tallow,ASV169,4,Bacteria,Bacillota,Bacilli,Erysipelotrichales,Erysipelotrichaceae,NA,NA
+Corn Oil_vs_Tallow,ASV235,4,Bacteria,Bacillota,Negativicutes,Veillonellales-Selenomonadales,Veillonellaceae,NA,NA
+Corn Oil_vs_Tallow,ASV236,4,Bacteria,Bacillota,Clostridia,Clostridia UCG-014,NA,NA,NA
+Corn Oil_vs_Tallow & Corn Oil_vs_TL & Tallow_vs_COL & TL_vs_COL,ASV99,1,Bacteria,Bacillota,Clostridia,NA,NA,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL,ASV194,2,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Segatella,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL,ASV216,2,Bacteria,Bacillota,Bacilli,RF39,NA,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control,ASV167,2,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control,ASV66,2,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotellaceae NK3B31 group,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL,ASV10,5,Bacteria,Patescibacteria,Saccharimonadia,Saccharimonadales,NA,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL,ASV190,5,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL,ASV220,5,Bacteria,Bacillota,Bacilli,RF39,NA,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL,ASV290,5,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,[Bacteroides] pectinophilus group,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_Control & Tallow_vs_TL,ASV296,5,Bacteria,Bacillota,Clostridia,Clostridia UCG-014,NA,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_TL,ASV153,2,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,F082,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_COL & Tallow_vs_TL,ASV292,2,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotellaceae UCG-001,NA
+Corn Oil_vs_Tallow & Tallow_vs_Control,ASV105,1,Bacteria,Cyanobacteriota,Vampirivibrionia,Gastranaerophilales,Gastranaerophilaceae,CAG-196,NA
+Corn Oil_vs_Tallow & Tallow_vs_Control & TL_vs_Control,ASV138,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_Control & Tallow_vs_TL,ASV184,1,Bacteria,Bacillota,Clostridia,Clostridia UCG-014,NA,NA,NA
+Corn Oil_vs_Tallow & Tallow_vs_TL,ASV125,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,F082,NA,NA
+TL_vs_COL,ASV215,5,Bacteria,Spirochaetota,Spirochaetia,Spirochaetales,Spirochaetaceae,Treponema,NA
+TL_vs_COL,ASV234,5,Bacteria,Bacillota,Clostridia,Oscillospirales,Oscillospiraceae,NK4A214 group,NA
+TL_vs_COL,ASV267,5,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,CAG-352,NA
+TL_vs_COL,ASV57,5,Bacteria,Spirochaetota,Spirochaetia,Spirochaetales,Spirochaetaceae,Treponema,NA
+TL_vs_COL,ASV62,5,Bacteria,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Oribacterium,NA
+TL_vs_COL & TL_vs_Control,ASV193,1,Bacteria,Bacillota,Clostridia,Oscillospirales,Oscillospiraceae,NK4A214 group,NA
+TL_vs_Control,ASV52,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,NA,NA,NA
+Tallow_vs_COL,ASV174,3,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,NA,NA
+Tallow_vs_COL,ASV209,3,Bacteria,Bacillota,Clostridia,Christensenellales,Christensenellaceae,Christensenellaceae R-7 group,NA
+Tallow_vs_COL,ASV79,3,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Rikenellaceae,Rikenellaceae RC9 gut group,NA
+Tallow_vs_COL & TL_vs_COL,ASV76,1,Bacteria,Actinomycetota,Coriobacteriia,Coriobacteriales,Atopobiaceae,Tractidigestivibacter,NA
+Tallow_vs_COL & Tallow_vs_Control,ASV115,2,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,Ruminococcus,NA
+Tallow_vs_COL & Tallow_vs_Control,ASV179,2,Bacteria,Bacillota,Negativicutes,Acidaminococcales,Acidaminococcaceae,Acidaminococcus,NA
+Tallow_vs_COL & Tallow_vs_TL,ASV117,1,Bacteria,Bacillota,Clostridia,Christensenellales,Christensenellaceae,Christensenellaceae R-7 group,NA
+Tallow_vs_Control,ASV132,4,Bacteria,Bacillota,Clostridia,Clostridia UCG-014,NA,NA,NA
+Tallow_vs_Control,ASV172,4,Bacteria,Bacillota,Clostridia,Clostridia UCG-014,NA,NA,NA
+Tallow_vs_Control,ASV206,4,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,NA,NA
+Tallow_vs_Control,ASV45,4,Bacteria,Bacillota,Clostridia,Oscillospirales,Ruminococcaceae,NA,NA
+Tallow_vs_Control & TL_vs_Control,ASV177,1,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,F082,NA,NA
+Tallow_vs_Control & Tallow_vs_TL,ASV144,2,Bacteria,Actinomycetota,Actinobacteria,Bifidobacteriales,Bifidobacteriaceae,Bifidobacterium,adolescentis
+Tallow_vs_Control & Tallow_vs_TL,ASV225,2,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,NA,NA
+Tallow_vs_TL,ASV126,2,Bacteria,Bacillota,Negativicutes,Acidaminococcales,Acidaminococcaceae,Succiniclasticum,NA
+Tallow_vs_TL,ASV143,2,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Rikenellaceae,Rikenellaceae RC9 gut group,NA
+Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV13,4,Bacteria,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Xylanibacter,NA
+Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV133,4,Bacteria,Bacillota,Negativicutes,Veillonellales-Selenomonadales,Selenomonadaceae,NA,NA
+Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV230,4,Bacteria,Bacillota,Negativicutes,Veillonellales-Selenomonadales,Selenomonadaceae,NA,NA
+Tallow_vs_TL & TL_vs_COL & TL_vs_Control,ASV285,4,Bacteria,Actinomycetota,Actinobacteria,Bifidobacteriales,Bifidobacteriaceae,Bifidobacterium,pseudolongum
